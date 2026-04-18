@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermione Hair - Luxury Haircare</title>
+    <style>
+        @font-face {
+            font-family: 'TAN AEGEAN';
+            src: url('TAN-AEGEAN-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+            --gray-dark: #666666;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'TAN AEGEAN', 'Times New Roman', Times, serif;
+            font-weight: normal;
+            letter-spacing: 0.02em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--black);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'TAN AEGEAN', 'Times New Roman', serif;
+            font-size: 1.8rem;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--black);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            padding: 0.5rem;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--black);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--gray-dark);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 1rem 3rem;
+            border: 2px solid var(--black);
+            background: transparent;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Times New Roman', Times, serif;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary::before {
+            background: var(--white);
+        }
+
+        .btn-primary:hover {
+            color: var(--black);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section.alt-bg {
+            background: var(--gray-light);
+            max-width: 100%;
+        }
+
+        section.full-width {
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .section-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--gray-dark);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Solution Section - Enhanced Grid */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--black);
+            color: var(--white);
+            font-size: 2rem;
+            border-radius: var(--radius);
+        }
+
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card p {
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gray-light);
+            transition: var(--transition);
+            z-index: 0;
+        }
+
+        .product-card:hover::before {
+            left: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background: var(--gray-light);
+            position: relative;
+            border-bottom: 1px solid var(--black);
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--black);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+
+        .product-info {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .product-info p {
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        .add-to-cart {
+            padding: 0.75rem 1.5rem;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: var(--radius);
+        }
+
+        .add-to-cart:hover {
+            background: var(--gray-dark);
+        }
+
+        /* Bundles Grid */
+        .bundles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .bundle-card {
+            background: var(--white);
+            border: 2px solid var(--black);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .bundle-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .bundle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .bundle-card:hover .bundle-image img {
+            transform: scale(1.05);
+        }
+
+        .bundle-content {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .bundle-card:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .bundle-card:hover .bundle-products,
+        .bundle-card:hover .bundle-price,
+        .bundle-card:hover .bundle-savings {
+            color: var(--white);
+        }
+
+        .bundle-card:hover .btn {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        .bundle-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .bundle-products {
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .bundle-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .bundle-savings {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            transition: var(--transition);
+        }
+
+        /* Checkout Section */
+        .checkout-section {
+            padding: 8rem 2rem 6rem;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+        }
+
+        .checkout-form {
+            background: var(--white);
+            padding: 3rem;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+        }
+
+        .form-section {
+            margin-bottom: 3rem;
+        }
+
+        .form-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--black);
+            background: var(--white);
+            font-size: 1rem;
+            font-family: 'Times New Roman', Times, serif;
+            transition: var(--transition);
+            border-radius: var(--radius);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: var(--gray-light);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .order-summary {
+            background: var(--gray-light);
+            padding: 3rem;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .order-summary h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--black);
+        }
+
+        .cart-action-btn {
+            flex: 1;
+            padding: 0.75rem;
+            background: transparent;
+            border: 1px solid var(--black);
+            cursor: pointer;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border-radius: var(--radius);
+        }
+
+        .cart-action-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .cart-action-btn.danger:hover {
+            background: #c00;
+            border-color: #c00;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--black);
+            position: relative;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-item-info {
+            flex: 1;
+        }
+
+        .order-item-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .order-item-qty {
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+        }
+
+        .order-item-price {
+            font-weight: 600;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.25rem 0.5rem;
+            margin-left: 1rem;
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            opacity: 1;
+            color: #c00;
+        }
+
+        .order-total {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--black);
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .payment-methods {
+            margin-top: 2rem;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .payment-method:hover,
+        .payment-method.active {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .payment-method input[type="radio"] {
+            margin-right: 1rem;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Product Detail */
+        .product-detail {
+            padding: 8rem 2rem 6rem;
+        }
+
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 600px;
+            background: var(--gray-light);
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-detail-info h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .product-detail-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+        }
+
+        .product-features {
+            background: var(--gray-light);
+            padding: 2rem;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+
+        .product-features h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features ul {
+            list-style: none;
+        }
+
+        .product-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+
+        .product-features li::before {
+            content: '— ';
+            margin-right: 0.5rem;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-right: 1px solid var(--black);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:last-of-type {
+            border-right: none;
+            border-left: 1px solid var(--black);
+        }
+
+        .quantity-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .quantity-display {
+            width: 80px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: var(--radius);
+            border: 1px solid var(--black);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-brand p {
+            color: var(--gray-medium);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--gray-medium);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-contact p {
+            color: var(--gray-medium);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            margin-top: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--gray-dark);
+            background: transparent;
+            color: var(--white);
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: var(--radius);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--gray-medium);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            border-radius: var(--radius);
+        }
+
+        .contact-form button:hover {
+            background: var(--gray-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-dark);
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+        }
+
+        /* Policy Pages */
+        .policy-section {
+            padding: 8rem 2rem 6rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .policy-section h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 2rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            margin: 3rem 0 1rem;
+        }
+
+        .policy-section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--gray-dark);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            border: 2px solid var(--black);
+            border-radius: var(--radius);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--black);
+            line-height: 1;
+        }
+
+        .modal-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Page Management */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* See More Button */
+        .see-more-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 3rem 2rem;
+                gap: 2rem;
+                transition: var(--transition);
+                border-right: 1px solid var(--black);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero,
+            .checkout-grid,
+            .product-detail-grid,
+            .about-grid,
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 400px;
+                order: -1;
+            }
+
+            .products-grid,
+            .bundles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .order-summary {
+                position: relative;
+                top: 0;
+            }
+
+            .cart-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">HERMIONE HAIR</a>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home'); closeMobileMenu()">Home</a></li>
+                <li><a href="#" onclick="showPage('products'); closeMobileMenu()">Products</a></li>
+                <li><a href="#" onclick="showPage('bundles'); closeMobileMenu()">Bundles</a></li>
+                <li><a href="#" onclick="showPage('about'); closeMobileMenu()">About</a></li>
+                <li>
+                    <div class="cart-icon" onclick="showPage('checkout'); closeMobileMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Unlock Your Hair's Full Potential</h1>
+                <p>Luxury, results-driven haircare designed to cleanse, treat, nourish, and restore, giving you stronger, fuller, and healthier hair from root to tip.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="showPage('products')">Shop Now</button>
+                    <button class="btn" onclick="showPage('bundles')">Explore Bundles</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Natural Hair Beauty">
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section>
+            <div class="section-header">
+                <h2>Struggling with Breakage, Dandruff, Thinning, or Slow Growth?</h2>
+                <p>From itchy scalp and dandruff to breakage, thinning edges, and stunted growth, hair issues can be frustrating and difficult to manage without the right routine.</p>
+                <p style="margin-top: 1.5rem; font-weight: bold; color: var(--black);">That's why you need more than just one product, you need a complete system</p>
+            </div>
+        </section>
+
+        <!-- Solution Section - Enhanced -->
+        <section class="alt-bg full-width">
+            <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+                <div class="section-header">
+                    <h2>Everything Your Hair Needs In One Place</h2>
+                    <p>At Hermione Hair, we provide a full range of high-performance products to care for your hair at every stage</p>
+                </div>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">01</div>
+                        <h3>Cleansing</h3>
+                        <p>Herbal Shampoo formulated to cleanse deeply without stripping natural oils</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">02</div>
+                        <h3>Treatment</h3>
+                        <p>Anti-Dandruff Cream and Hair Growth Oil for targeted scalp and root care</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">03</div>
+                        <h3>Moisture & Repair</h3>
+                        <p>Hair Butter and Hair Growth Cream to lock in hydration and strengthen strands</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">04</div>
+                        <h3>Conditioning</h3>
+                        <p>Wash-Off, Leave-In, and Deep Conditioners for complete nourishment</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">05</div>
+                        <h3>Targeted Care</h3>
+                        <p>Edge Growth Cream specially formulated for delicate hairline areas</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">06</div>
+                        <h3>Manageability</h3>
+                        <p>Detangling Spray to make styling effortless and prevent breakage</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 3rem; font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin-left: auto; margin-right: auto;">Each product is formulated to work together, helping you achieve visible, lasting results</p>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn btn-primary" onclick="showPage('products')">Shop Collection</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bestsellers Preview -->
+        <section>
+            <div class="section-header">
+                <h2>Our Signature Bestsellers</h2>
+                <p>The products our customers can't live without</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" onclick="showProductDetail(8)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80" alt="Edge Growth Cream">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Edge Growth Cream</h3>
+                        <p>Intensive treatment for thinning edges and temple areas</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦7,500</span>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(8)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showProductDetail(3)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80" alt="Hair Growth Oil">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hair Growth Oil</h3>
+                        <p>Powerful botanical blend to stimulate growth and strengthen roots</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦8,500</span>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(3)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showProductDetail(5)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80" alt="Hair Growth Cream">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hair Growth Cream</h3>
+                        <p>Rich nourishing cream for length retention and thickness</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦7,000</span>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(5)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="see-more-container">
+                <button class="btn" onclick="showPage('products')">See More</button>
+            </div>
+        </section>
+
+        <!-- Bundles Teaser -->
+        <section class="alt-bg full-width">
+            <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+                <div class="section-header">
+                    <h2>Better Results with Our Bundles</h2>
+                    <p>Our bundles are carefully paired to target specific hair concerns, giving you faster and more effective results while saving you money</p>
+                    <p style="margin-top: 1rem;">Whether you're focused on growth, scalp care, or full hair restoration, there's a bundle for you.</p>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn btn-primary" onclick="showPage('bundles')">Shop Bundles</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section>
+            <div class="section-header">
+                <h2>Ready to Transform Your Hair?</h2>
+                <p>UNLOCK your hair's full potential with the right products and the right routine</p>
+            </div>
+            <div class="hero-cta" style="justify-content: center;">
+                <button class="btn btn-primary" onclick="showPage('products')">Shop Now</button>
+                <button class="btn" onclick="scrollToContact()">Send a Message</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <section style="padding-top: 8rem;">
+            <div class="section-header">
+                <h2>Complete Hair Care Collection</h2>
+                <p>Everything you need for your natural hair journey</p>
+            </div>
+            <div class="products-grid" id="allProductsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Bundles Page -->
+    <div id="bundles" class="page">
+        <section style="padding-top: 8rem;">
+            <div class="section-header">
+                <h2>Our Signature Bundles</h2>
+                <p>Carefully curated combinations for maximum results</p>
+            </div>
+            <div class="bundles-grid">
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80" alt="Complete Growth Bundle">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>Complete Growth Bundle</h3>
+                        <div class="bundle-products">
+                            Hair Growth Oil<br>
+                            Edge Growth Cream<br>
+                            Hair Butter
+                        </div>
+                        <div class="bundle-price">₦20,000</div>
+                        <div class="bundle-savings">Save ₦3,000</div>
+                        <button class="btn" onclick="addBundleToCart('growth-complete')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80" alt="Edge Revival Bundle">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>Edge Revival Bundle</h3>
+                        <div class="bundle-products">
+                            Hair Growth Oil<br>
+                            Edge Growth Cream
+                        </div>
+                        <div class="bundle-price">₦14,500</div>
+                        <div class="bundle-savings">Save ₦1,500</div>
+                        <button class="btn" onclick="addBundleToCart('edge-revival')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80" alt="Wash Day Essentials">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>Wash Day Essentials</h3>
+                        <div class="bundle-products">
+                            Herbal Shampoo<br>
+                            Wash-Off Conditioner<br>
+                            Leave-In Conditioner
+                        </div>
+                        <div class="bundle-price">₦16,000</div>
+                        <div class="bundle-savings">Save ₦2,500</div>
+                        <button class="btn" onclick="addBundleToCart('wash-day')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://images.unsplash.com/photo-1583001761003-7c6b7a1b6d4e?w=600&q=80" alt="Scalp Care Bundle">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>Scalp Care Bundle</h3>
+                        <div class="bundle-products">
+                            Herbal Shampoo<br>
+                            Anti-Dandruff Cream<br>
+                            Hair Growth Oil
+                        </div>
+                        <div class="bundle-price">₦18,500</div>
+                        <div class="bundle-savings">Save ₦2,500</div>
+                        <button class="btn" onclick="addBundleToCart('scalp-care')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80" alt="Moisture Lock Bundle">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>Moisture Lock Bundle</h3>
+                        <div class="bundle-products">
+                            Hair Butter<br>
+                            Deep Conditioner<br>
+                            Leave-In Conditioner
+                        </div>
+                        <div class="bundle-price">₦15,500</div>
+                        <div class="bundle-savings">Save ₦2,000</div>
+                        <button class="btn" onclick="addBundleToCart('moisture-lock')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Full System Bundle">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>Full System Bundle</h3>
+                        <div class="bundle-products">
+                            All 10 Products<br>
+                            Complete Hair Care System
+                        </div>
+                        <div class="bundle-price">₦60,000</div>
+                        <div class="bundle-savings">Save ₦10,000</div>
+                        <button class="btn" onclick="addBundleToCart('full-system')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="productDetail" class="page">
+        <section class="product-detail">
+            <div class="product-detail-grid">
+                <div class="product-gallery">
+                    <div class="main-image" id="mainProductImageContainer">
+                        <img id="mainProductImage" src="" alt="">
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <h1 id="detailProductName">Product Name</h1>
+                    <div class="product-detail-price" id="detailProductPrice">₦0</div>
+                    <div class="product-description" id="detailProductDesc">Product description</div>
+                    <div class="product-features">
+                        <h3>Key Benefits</h3>
+                        <ul id="detailProductBenefits"></ul>
+                    </div>
+                    <div class="quantity-selector">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                            <div class="quantity-display" id="quantityDisplay">1</div>
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="addToCartFromDetail()" style="width: 100%; margin-bottom: 1rem;">Add to Cart</button>
+                    <button class="btn" onclick="buyNow()" style="width: 100%;">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkout" class="page">
+        <section class="checkout-section">
+            <h2 style="font-family: 'TAN AEGEAN', 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 3rem; text-align: center;">Checkout</h2>
+            <div class="checkout-grid">
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <div class="form-section">
+                            <h3>Shipping Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Delivery Address *</label>
+                                <textarea rows="3" id="address" required></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>City *</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>State *</label>
+                                    <select id="state" required onchange="updateShippingCost()">
+                                        <option value="">Select State</option>
+                                        <option value="Abia">Abia</option>
+                                        <option value="Adamawa">Adamawa</option>
+                                        <option value="Akwa Ibom">Akwa Ibom</option>
+                                        <option value="Anambra">Anambra</option>
+                                        <option value="Bauchi">Bauchi</option>
+                                        <option value="Bayelsa">Bayelsa</option>
+                                        <option value="Benue">Benue</option>
+                                        <option value="Borno">Borno</option>
+                                        <option value="Cross River">Cross River</option>
+                                        <option value="Delta">Delta</option>
+                                        <option value="Ebonyi">Ebonyi</option>
+                                        <option value="Edo">Edo</option>
+                                        <option value="Ekiti">Ekiti</option>
+                                        <option value="Enugu">Enugu</option>
+                                        <option value="FCT">Federal Capital Territory</option>
+                                        <option value="Gombe">Gombe</option>
+                                        <option value="Imo">Imo</option>
+                                        <option value="Jigawa">Jigawa</option>
+                                        <option value="Kaduna">Kaduna</option>
+                                        <option value="Kano">Kano</option>
+                                        <option value="Katsina">Katsina</option>
+                                        <option value="Kebbi">Kebbi</option>
+                                        <option value="Kogi">Kogi</option>
+                                        <option value="Kwara">Kwara</option>
+                                        <option value="Lagos-Mainland">Lagos (Mainland)</option>
+                                        <option value="Lagos-Island">Lagos (Island)</option>
+                                        <option value="Nasarawa">Nasarawa</option>
+                                        <option value="Niger">Niger</option>
+                                        <option value="Ogun">Ogun</option>
+                                        <option value="Ondo">Ondo</option>
+                                        <option value="Osun">Osun</option>
+                                        <option value="Oyo">Oyo</option>
+                                        <option value="Plateau">Plateau</option>
+                                        <option value="Rivers">Rivers</option>
+                                        <option value="Sokoto">Sokoto</option>
+                                        <option value="Taraba">Taraba</option>
+                                        <option value="Yobe">Yobe</option>
+                                        <option value="Zamfara">Zamfara</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Payment Method</h3>
+                            <div class="payment-methods">
+                                <div class="payment-method active" onclick="selectPayment(this, 'card')">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <div>
+                                        <strong>Card Payment</strong>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Pay securely with your debit or credit card via Paystack</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method" onclick="selectPayment(this, 'transfer')">
+                                    <input type="radio" name="payment" value="transfer">
+                                    <div>
+                                        <strong>Bank Transfer</strong>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Transfer directly to our bank account via Paystack</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method" onclick="selectPayment(this, 'ussd')">
+                                    <input type="radio" name="payment" value="ussd">
+                                    <div>
+                                        <strong>USSD Payment</strong>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Pay with your bank's USSD code</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Complete Order</button>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="cart-actions">
+                        <button class="cart-action-btn" onclick="viewCartDetails()">View Cart</button>
+                        <button class="cart-action-btn danger" onclick="emptyCart()">Empty Cart</button>
+                    </div>
+                    <div id="orderItems">
+                        <div class="order-item">
+                            <span>Your cart is empty</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--black);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">₦0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span>Shipping:</span>
+                            <span id="shipping">₦0</span>
+                        </div>
+                    </div>
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span id="total">₦0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section style="padding-top: 8rem;">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Our Story">
+                </div>
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>Hermione Hair was born from a deep love for natural hair and a commitment to celebrating the beauty of African heritage. Founded with a vision to provide luxury haircare that delivers real results, we combine powerful botanicals with modern science.</p>
+                    <p>Every product we create honors traditional wisdom while meeting the needs of today's naturalists. We source our ingredients ethically, ensuring both quality and community impact.</p>
+                    <p>Our mission is simple: to help every natural-haired person embrace their crown with confidence, using products that are as nourishing as they are effective.</p>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 6rem;">
+                <h2>Why Hermione Hair?</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Complete System</h3>
+                    <p>A comprehensive haircare system designed to address all hair concerns from root to tip</p>
+                </div>
+                <div class="value-card">
+                    <h3>Science-Backed</h3>
+                    <p>Formulated with powerful botanicals and modern science for proven effectiveness</p>
+                </div>
+                <div class="value-card">
+                    <h3>Real Results</h3>
+                    <p>Designed for visible, lasting improvement—not just temporary appearance</p>
+                </div>
+                <div class="value-card">
+                    <h3>Customer Trust</h3>
+                    <p>Trusted by thousands of customers who have experienced real transformation</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div id="privacy" class="page">
+        <section class="policy-section">
+            <h1>Privacy Policy</h1>
+            <p><em>Last updated: April 17, 2026</em></p>
+            <h2>1. Information We Collect</h2>
+            <p>When you visit Hermione Hair or make a purchase, we collect personal information including name, email, phone number, shipping address, and payment information processed securely through Paystack.</p>
+            <h2>2. How We Use Your Information</h2>
+            <p>We use your information to process orders, communicate about products, improve our service, and detect fraud. We never sell your personal information.</p>
+            <h2>3. Contact Us</h2>
+            <p>For privacy inquiries: <strong>angelamaefunah@gmail.com</strong></p>
+        </section>
+    </div>
+
+    <!-- Delivery Policy Page -->
+    <div id="delivery" class="page">
+        <section class="policy-section">
+            <h1>Delivery & Shipping Policy</h1>
+            <p><em>Last updated: April 17, 2026</em></p>
+            <h2>1. Delivery Coverage</h2>
+            <p>We deliver to all 36 states in Nigeria.</p>
+            <h2>2. Shipping Costs</h2>
+            <ul>
+                <li><strong>Lagos Mainland:</strong> ₦1,500</li>
+                <li><strong>Lagos Island:</strong> ₦2,000</li>
+                <li><strong>Other States:</strong> ₦2,500 - ₦4,000</li>
+                <li><strong>Free Shipping:</strong> Orders above ₦25,000</li>
+            </ul>
+            <h2>3. Delivery Timeline</h2>
+            <ul>
+                <li><strong>Lagos:</strong> 1-3 business days</li>
+                <li><strong>Major Cities:</strong> 3-5 business days</li>
+                <li><strong>Other Locations:</strong> 5-7 business days</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>HERMIONE HAIR</h3>
+                <p>Luxury haircare for stronger, fuller, healthier hair from root to tip.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('products')">All Products</a></li>
+                    <li><a href="#" onclick="showPage('bundles')">Bundles</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                    <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+                    <li><a href="#" onclick="showPage('delivery')">Delivery Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Not sure where to start?</h4>
+                <p>Send us a message, and we'll help you build the perfect routine for your hair.</p>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hermione Hair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 id="modalTitle">Success!</h2>
+            <p id="modalMessage">Action completed successfully.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn" onclick="closeModal()" style="flex: 1;">Continue Shopping</button>
+                <button class="btn btn-primary" onclick="closeModal(); showPage('checkout')" style="flex: 1;">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Details Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCartModal()">&times;</button>
+            <h2>Your Cart</h2>
+            <div id="cartModalContent" style="margin: 2rem 0;">
+                <!-- Cart items will be displayed here -->
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn" onclick="closeCartModal()" style="flex: 1;">Close</button>
+                <button class="btn btn-primary" onclick="closeCartModal(); showPage('checkout')" style="flex: 1;">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paystack Script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <script>
+        // Product images mapping
+        const productImages = {
+            1: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=600&q=80',
+            2: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80',
+            3: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80',
+            4: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80',
+            5: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80',
+            6: 'https://images.unsplash.com/photo-1583001761003-7c6b7a1b6d4e?w=600&q=80',
+            7: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80',
+            8: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80',
+            9: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80',
+            10: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80'
+        };
+
+        // Product data - All 10 products
+        const products = {
+            1: {
+                name: 'Herbal Shampoo',
+                price: 5500,
+                image: productImages[1],
+                description: 'Gentle cleansing shampoo formulated with natural herbs to remove buildup while maintaining your hair\'s natural moisture balance. Perfect for all hair types.',
+                benefits: [
+                    'Deep cleanses without stripping natural oils',
+                    'Removes product buildup effectively',
+                    'Sulfate-free formula',
+                    'Safe for color-treated hair',
+                    'Natural herbal ingredients'
+                ]
+            },
+            2: {
+                name: 'Anti-Dandruff Cream',
+                price: 6000,
+                image: productImages[2],
+                description: 'Targeted treatment cream that soothes scalp irritation and eliminates dandruff at the source. Fast-acting formula provides relief within days.',
+                benefits: [
+                    'Eliminates dandruff effectively',
+                    'Soothes itchy scalp',
+                    'Prevents flaking',
+                    'Non-greasy formula',
+                    'Suitable for sensitive scalps'
+                ]
+            },
+            3: {
+                name: 'Hair Growth Oil',
+                price: 8500,
+                image: productImages[3],
+                description: 'Powerful botanical blend of indigenous oils that stimulate follicles, strengthen roots, and accelerate natural hair growth. Our signature formula.',
+                benefits: [
+                    'Stimulates hair growth from the root',
+                    'Strengthens and prevents breakage',
+                    'Deeply nourishes scalp and hair',
+                    '100% natural ingredients',
+                    'Lightweight, non-greasy'
+                ]
+            },
+            4: {
+                name: 'Hair Butter',
+                price: 6500,
+                image: productImages[4],
+                description: 'Rich, creamy butter that seals in moisture and provides long-lasting softness. Perfect for protective styling and daily moisture retention.',
+                benefits: [
+                    'Intense moisture retention',
+                    'Perfect for protective styles',
+                    'Reduces frizz significantly',
+                    'Natural shea butter base',
+                    'Long-lasting softness'
+                ]
+            },
+            5: {
+                name: 'Hair Growth Cream',
+                price: 7000,
+                image: productImages[5],
+                description: 'Nourishing cream specially formulated for length retention and thickness. Strengthens each strand while promoting healthy growth.',
+                benefits: [
+                    'Promotes length retention',
+                    'Adds thickness and volume',
+                    'Strengthens hair strands',
+                    'Reduces split ends',
+                    'Daily use formula'
+                ]
+            },
+            6: {
+                name: 'Wash-Off Conditioner',
+                price: 5000,
+                image: productImages[6],
+                description: 'Rinse-out conditioner that detangles, softens, and prepares hair for styling. Use after shampooing for best results.',
+                benefits: [
+                    'Instant detangling',
+                    'Softens and smooths',
+                    'Improves manageability',
+                    'Repairs damage',
+                    'Pleasant herbal scent'
+                ]
+            },
+            7: {
+                name: 'Leave-In Conditioner',
+                price: 5500,
+                image: productImages[7],
+                description: 'Lightweight leave-in treatment that provides all-day moisture, heat protection, and frizz control without weighing hair down.',
+                benefits: [
+                    'All-day moisture',
+                    'Heat protection up to 230°C',
+                    'Frizz control',
+                    'Lightweight formula',
+                    'UV protection'
+                ]
+            },
+            8: {
+                name: 'Edge Growth Cream',
+                price: 7500,
+                image: productImages[8],
+                description: 'Intensive treatment specifically designed for thinning edges and temple areas. Concentrated formula targets problem areas for visible regrowth.',
+                benefits: [
+                    'Targets thinning edges',
+                    'Promotes rapid regrowth',
+                    'Strengthens weak areas',
+                    'Non-irritating formula',
+                    'Visible results in weeks'
+                ]
+            },
+            9: {
+                name: 'Deep Conditioner',
+                price: 7500,
+                image: productImages[9],
+                description: 'Weekly intensive treatment that penetrates deep into the hair shaft to repair, restore, and revitalize damaged hair.',
+                benefits: [
+                    'Deep repair treatment',
+                    'Restores elasticity',
+                    'Prevents breakage',
+                    'Protein-rich formula',
+                    'Use weekly for best results'
+                ]
+            },
+            10: {
+                name: 'Detangling Spray',
+                price: 4500,
+                image: productImages[10],
+                description: 'Instant detangler that makes combing and styling effortless. Reduces breakage and adds shine while managing tangles.',
+                benefits: [
+                    'Instant detangling',
+                    'Reduces combing breakage',
+                    'Adds natural shine',
+                    'Lightweight mist',
+                    'Safe for daily use'
+                ]
+            }
+        };
+
+        // Cart and state management
+        let cart = [];
+        let currentProductId = 1;
+        let currentQuantity = 1;
+        let selectedPaymentMethod = 'card';
+        let shippingCost = 0;
+
+        // Initialize products grid
+        function loadAllProducts() {
+            const grid = document.getElementById('allProductsGrid');
+            grid.innerHTML = Object.keys(products).map(id => {
+                const product = products[id];
+                const isBestseller = ['3', '5', '8'].includes(id);
+                return `
+                    <div class="product-card" onclick="showProductDetail(${id})">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}">
+                            ${isBestseller ? '<div class="product-badge">Bestseller</div>' : ''}
+                        </div>
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p>${product.description.substring(0, 80)}...</p>
+                            <div class="product-footer">
+                                <span class="product-price">₦${product.price.toLocaleString()}</span>
+                                <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(${id})">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+            closeMobileMenu();
+
+            if (pageId === 'products') {
+                loadAllProducts();
+            }
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const btn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const btn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.remove('active');
+            btn.classList.remove('active');
+        }
+
+        // Product detail
+        function showProductDetail(productId) {
+            currentProductId = productId;
+            currentQuantity = 1;
+            const product = products[productId];
+            
+            document.getElementById('mainProductImage').src = product.image;
+            document.getElementById('mainProductImage').alt = product.name;
+            document.getElementById('detailProductName').textContent = product.name;
+            document.getElementById('detailProductPrice').textContent = `₦${product.price.toLocaleString()}`;
+            document.getElementById('detailProductDesc').textContent = product.description;
+            document.getElementById('quantityDisplay').textContent = '1';
+            
+            const benefitsList = document.getElementById('detailProductBenefits');
+            benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join('');
+            
+            showPage('productDetail');
+        }
+
+        // Quantity controls
+        function increaseQuantity() {
+            currentQuantity++;
+            document.getElementById('quantityDisplay').textContent = currentQuantity;
+        }
+
+        function decreaseQuantity() {
+            if (currentQuantity > 1) {
+                currentQuantity--;
+                document.getElementById('quantityDisplay').textContent = currentQuantity;
+            }
+        }
+
+        // Cart functions
+        function addToCart(productId, quantity = 1) {
+            const product = products[productId];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: product.price,
+                    quantity: quantity
+                });
+            }
+            
+            updateCartCount();
+            updateOrderSummary();
+            showModal('Added to Cart!', `${product.name} has been added to your cart.`);
+        }
+
+        function addToCartFromDetail() {
+            addToCart(currentProductId, currentQuantity);
+        }
+
+        function buyNow() {
+            addToCart(currentProductId, currentQuantity);
+            showPage('checkout');
+        }
+
+        function addBundleToCart(bundleId) {
+            const bundles = {
+                'growth-complete': { name: 'Complete Growth Bundle', price: 20000 },
+                'edge-revival': { name: 'Edge Revival Bundle', price: 14500 },
+                'wash-day': { name: 'Wash Day Essentials', price: 16000 },
+                'scalp-care': { name: 'Scalp Care Bundle', price: 18500 },
+                'moisture-lock': { name: 'Moisture Lock Bundle', price: 15500 },
+                'full-system': { name: 'Full System Bundle', price: 60000 }
+            };
+
+            const bundle = bundles[bundleId];
+            const existingItem = cart.find(item => item.name === bundle.name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: bundleId,
+                    name: bundle.name,
+                    price: bundle.price,
+                    quantity: 1,
+                    isBundle: true
+                });
+            }
+            
+            updateCartCount();
+            updateOrderSummary();
+            showModal('Bundle Added!', `${bundle.name} has been added to your cart.`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            updateOrderSummary();
+        }
+
+        function emptyCart() {
+            if (cart.length === 0) {
+                showModal('Cart Empty', 'Your cart is already empty.');
+                return;
+            }
+            
+            if (confirm('Are you sure you want to empty your cart?')) {
+                cart = [];
+                updateCartCount();
+                updateOrderSummary();
+                showModal('Cart Emptied', 'All items have been removed from your cart.');
+            }
+        }
+
+        function viewCartDetails() {
+            if (cart.length === 0) {
+                showModal('Cart Empty', 'Your cart is empty. Add some products first!');
+                return;
+            }
+
+            const cartContent = cart.map((item, index) => `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--gray-medium);">
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">${item.name}</div>
+                        <div style="font-size: 0.9rem; color: var(--gray-dark);">Qty: ${item.quantity} × ₦${item.price.toLocaleString()}</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-weight: 600; margin-bottom: 0.5rem;">₦${(item.price * item.quantity).toLocaleString()}</div>
+                        <button onclick="removeFromCart(${index}); viewCartDetails();" style="background: transparent; border: 1px solid #c00; color: #c00; padding: 0.25rem 0.75rem; cursor: pointer; font-size: 0.85rem; border-radius: var(--radius);">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const totalContent = `
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--black);">
+                    <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
+                        <span>Subtotal:</span>
+                        <span>₦${subtotal.toLocaleString()}</span>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('cartModalContent').innerHTML = cartContent + totalContent;
+            document.getElementById('cartModal').classList.add('active');
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartModal').classList.remove('active');
+        }
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        function updateOrderSummary() {
+            const orderItemsContainer = document.getElementById('orderItems');
+            
+            if (cart.length === 0) {
+                orderItemsContainer.innerHTML = '<div class="order-item"><span>Your cart is empty</span></div>';
+                document.getElementById('subtotal').textContent = '₦0';
+                document.getElementById('shipping').textContent = '₦0';
+                document.getElementById('total').textContent = '₦0';
+                return;
+            }
+            
+            orderItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="order-item">
+                    <div class="order-item-info">
+                        <div class="order-item-name">${item.name}</div>
+                        <div class="order-item-qty">Qty: ${item.quantity}</div>
+                    </div>
+                    <div class="order-item-price">₦${(item.price * item.quantity).toLocaleString()}</div>
+                    <button class="remove-item" onclick="removeFromCart(${index})" title="Remove item">&times;</button>
+                </div>
+            `).join('');
+            
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const total = subtotal + shippingCost;
+            
+            document.getElementById('subtotal').textContent = `₦${subtotal.toLocaleString()}`;
+            document.getElementById('shipping').textContent = `₦${shippingCost.toLocaleString()}`;
+            document.getElementById('total').textContent = `₦${total.toLocaleString()}`;
+        }
+
+        function updateShippingCost() {
+            const state = document.getElementById('state').value;
+            if (state === 'Lagos-Mainland') {
+                shippingCost = 1500;
+            } else if (state === 'Lagos-Island') {
+                shippingCost = 2000;
+            } else if (state) {
+                shippingCost = 2500;
+            } else {
+                shippingCost = 0;
+            }
+            
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            if (subtotal >= 25000) {
+                shippingCost = 0;
+            }
+            
+            updateOrderSummary();
+        }
+
+        // Payment selection
+        function selectPayment(element, method) {
+            document.querySelectorAll('.payment-method').forEach(pm => {
+                pm.classList.remove('active');
+                pm.querySelector('input[type="radio"]').checked = false;
+            });
+            element.classList.add('active');
+            element.querySelector('input[type="radio"]').checked = true;
+            selectedPaymentMethod = method;
+        }
+
+        // Paystack Integration
+        function initializePaystack() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return false;
+            }
+
+            const email = document.getElementById('email').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phone = document.getElementById('phone').value;
+            const amount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + shippingCost;
+
+            const handler = PaystackPop.setup({
+                key: 'pk_test_xxxxxxxxxxxxxx', // Replace with your Paystack public key
+                email: email,
+                amount: amount * 100,
+                currency: 'NGN',
+                ref: 'HERM-' + Math.floor((Math.random() * 1000000000) + 1),
+                metadata: {
+                    custom_fields: [
+                        {
+                            display_name: "Customer Name",
+                            variable_name: "customer_name",
+                            value: `${firstName} ${lastName}`
+                        },
+                        {
+                            display_name: "Phone Number",
+                            variable_name: "phone",
+                            value: phone
+                        }
+                    ]
+                },
+                channels: selectedPaymentMethod === 'card' ? ['card'] : 
+                         selectedPaymentMethod === 'transfer' ? ['bank_transfer'] : ['ussd'],
+                callback: function(response) {
+                    showModal('Payment Successful!', `Your order has been confirmed. Reference: ${response.reference}`);
+                    cart = [];
+                    updateCartCount();
+                    updateOrderSummary();
+                    document.getElementById('checkoutForm').reset();
+                },
+                onClose: function() {
+                    alert('Payment window closed');
+                }
+            });
+            
+            handler.openIframe();
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            const subject = encodeURIComponent('Hair Care Inquiry from ' + name);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:angelamaefunah@gmail.com?subject=${subject}&body=${body}`;
+            
+            window.location.href = mailtoLink;
+            
+            showModal('Message Sent!', 'Your default email client should open. If not, please email us directly at angelamaefunah@gmail.com');
+            this.reset();
+        });
+
+        // Checkout form submission
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            initializePaystack();
+        });
+
+        // Modal functions
+        function showModal(title, message) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('successModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+
+        function scrollToContact() {
+            showPage('home');
+            setTimeout(() => {
+                document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        // Initialize
+        updateCartCount();
+        updateOrderSummary();
+        loadAllProducts();
+    </script>
+</body>
+</html>
