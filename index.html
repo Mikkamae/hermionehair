@@ -118,9 +118,8 @@
         .cart-icon {
             position: relative;
             cursor: pointer;
-            font-size: 1.2rem;
-            transition: var(--transition);
             padding: 0.5rem;
+            transition: var(--transition);
         }
 
         .cart-icon:hover {
@@ -175,14 +174,23 @@
         .hero {
             margin-top: 80px;
             min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            padding: 4rem 2rem;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        .hero-content {
+            text-align: center;
         }
 
         .hero-content h1 {
@@ -202,6 +210,7 @@
         .hero-cta {
             display: flex;
             gap: 1.5rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
@@ -306,12 +315,68 @@
             line-height: 1.8;
         }
 
+        /* Email Subscription */
+        .email-subscription {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            padding: 3rem;
+            background: var(--white);
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .email-subscription h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .email-subscription p {
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid var(--black);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .email-form button {
+            padding: 1rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .email-form button:hover {
+            background: var(--gray-dark);
+        }
+
         /* Solution Section - Enhanced Grid */
         .solution-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            justify-items: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .solution-card {
@@ -321,6 +386,8 @@
             border-radius: var(--radius);
             transition: var(--transition);
             text-align: center;
+            width: 100%;
+            max-width: 350px;
         }
 
         .solution-card:hover {
@@ -552,9 +619,210 @@
             transition: var(--transition);
         }
 
+        /* Cart Page */
+        .cart-page {
+            padding: 8rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cart-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+        }
+
+        .cart-items {
+            background: var(--white);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .cart-item-image {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-medium);
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            font-size: 1.1rem;
+            color: var(--gray-dark);
+            margin-bottom: 1rem;
+        }
+
+        .quantity-controls {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--gray-medium);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            color: var(--black);
+        }
+
+        .quantity-btn:hover {
+            background: var(--gray-light);
+        }
+
+        .quantity-display {
+            min-width: 40px;
+            text-align: center;
+            font-size: 1rem;
+            padding: 0 0.5rem;
+            border-left: 1px solid var(--gray-medium);
+            border-right: 1px solid var(--gray-medium);
+        }
+
+        .cart-item-actions {
+            text-align: right;
+        }
+
+        .cart-item-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: var(--gray-dark);
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            color: var(--black);
+        }
+
+        .cart-reassurance {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--gray-light);
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        .cart-summary {
+            background: var(--gray-light);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .cart-summary h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .summary-line.total {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--black);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .empty-cart-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .empty-cart-link:hover {
+            color: var(--black);
+        }
+
+        .similar-products {
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--gray-medium);
+        }
+
+        .similar-products h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .similar-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .similar-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .similar-scroll::-webkit-scrollbar-track {
+            background: var(--gray-light);
+            border-radius: 3px;
+        }
+
+        .similar-scroll::-webkit-scrollbar-thumb {
+            background: var(--gray-dark);
+            border-radius: 3px;
+        }
+
+        .similar-product {
+            min-width: 250px;
+            flex-shrink: 0;
+        }
+
         /* Checkout Section */
         .checkout-section {
             padding: 8rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .checkout-grid {
@@ -565,17 +833,20 @@
 
         .checkout-form {
             background: var(--white);
-            padding: 3rem;
-            border: 1px solid var(--black);
-            border-radius: var(--radius);
         }
 
         .form-section {
             margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
         }
 
         .form-section h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
             letter-spacing: 0.05em;
         }
@@ -586,10 +857,9 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            color: var(--gray-dark);
         }
 
         .form-group input,
@@ -597,7 +867,7 @@
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 1px solid var(--black);
+            border: 1px solid var(--gray-medium);
             background: var(--white);
             font-size: 1rem;
             font-family: 'Times New Roman', Times, serif;
@@ -609,7 +879,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            background: var(--gray-light);
+            border-color: var(--black);
         }
 
         .form-row {
@@ -618,112 +888,29 @@
             gap: 1.5rem;
         }
 
-        .order-summary {
-            background: var(--gray-light);
-            padding: 3rem;
-            border: 1px solid var(--black);
+        .delivery-option {
+            padding: 1.5rem;
+            border: 1px solid var(--gray-medium);
             border-radius: var(--radius);
-            height: fit-content;
-            position: sticky;
-            top: 120px;
-        }
-
-        .order-summary h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
-        }
-
-        .cart-actions {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--black);
-        }
-
-        .cart-action-btn {
-            flex: 1;
-            padding: 0.75rem;
-            background: transparent;
-            border: 1px solid var(--black);
             cursor: pointer;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
             transition: var(--transition);
-            border-radius: var(--radius);
+            margin-bottom: 1rem;
         }
 
-        .cart-action-btn:hover {
-            background: var(--black);
-            color: var(--white);
+        .delivery-option:hover,
+        .delivery-option.selected {
+            border-color: var(--black);
+            background: var(--gray-light);
         }
 
-        .cart-action-btn.danger:hover {
-            background: #c00;
-            border-color: #c00;
+        .delivery-option h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .order-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--black);
-            position: relative;
-        }
-
-        .order-item:last-child {
-            border-bottom: none;
-        }
-
-        .order-item-info {
-            flex: 1;
-        }
-
-        .order-item-name {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .order-item-qty {
+        .delivery-option p {
             font-size: 0.9rem;
             color: var(--gray-dark);
-        }
-
-        .order-item-price {
-            font-weight: 600;
-        }
-
-        .remove-item {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            padding: 0.25rem 0.5rem;
-            margin-left: 1rem;
-            opacity: 0.5;
-            transition: var(--transition);
-        }
-
-        .remove-item:hover {
-            opacity: 1;
-            color: #c00;
-        }
-
-        .order-total {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--black);
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .payment-methods {
-            margin-top: 2rem;
         }
 
         .payment-method {
@@ -731,7 +918,7 @@
             align-items: center;
             padding: 1.5rem;
             margin-bottom: 1rem;
-            border: 1px solid var(--black);
+            border: 1px solid var(--gray-medium);
             border-radius: var(--radius);
             cursor: pointer;
             transition: var(--transition);
@@ -739,8 +926,8 @@
 
         .payment-method:hover,
         .payment-method.active {
-            background: var(--black);
-            color: var(--white);
+            border-color: var(--black);
+            background: var(--gray-light);
         }
 
         .payment-method input[type="radio"] {
@@ -749,15 +936,55 @@
             height: 18px;
         }
 
+        .checkout-reassurance {
+            padding: 1.5rem;
+            background: var(--gray-light);
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            text-align: center;
+        }
+
+        .order-summary {
+            background: var(--gray-light);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .order-summary h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+            margin-bottom: 2rem;
+        }
+
         /* Product Detail */
         .product-detail {
             padding: 8rem 2rem 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .product-detail-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+            align-items: start;
         }
 
         .product-gallery {
@@ -839,42 +1066,6 @@
             margin-bottom: 2rem;
         }
 
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--black);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .quantity-btn {
-            width: 50px;
-            height: 50px;
-            border: none;
-            border-right: 1px solid var(--black);
-            background: var(--white);
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .quantity-btn:last-of-type {
-            border-right: none;
-            border-left: 1px solid var(--black);
-        }
-
-        .quantity-btn:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .quantity-display {
-            width: 80px;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
         /* About Section */
         .about-grid {
             display: grid;
@@ -932,6 +1123,32 @@
             line-height: 1.6;
         }
 
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gray-dark);
+            border-radius: var(--radius);
+            color: var(--gray-medium);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            border-color: var(--white);
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
         /* Footer */
         footer {
             background: var(--black);
@@ -957,6 +1174,7 @@
         .footer-brand p {
             color: var(--gray-medium);
             line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
         .footer-links h4 {
@@ -1120,18 +1338,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Page Management */
         .page {
             display: none;
@@ -1141,10 +1347,19 @@
             display: block;
         }
 
-        /* See More Button */
-        .see-more-container {
+        .empty-cart-state {
             text-align: center;
-            margin-top: 3rem;
+            padding: 4rem 2rem;
+        }
+
+        .empty-cart-state h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-cart-state p {
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
         }
 
         /* Mobile Responsive */
@@ -1172,17 +1387,21 @@
                 display: flex;
             }
 
-            .hero,
-            .checkout-grid,
-            .product-detail-grid,
-            .about-grid,
-            .footer-container {
+            .hero-container {
                 grid-template-columns: 1fr;
             }
 
             .hero-image {
                 height: 400px;
                 order: -1;
+            }
+
+            .cart-container,
+            .checkout-grid,
+            .product-detail-grid,
+            .about-grid,
+            .footer-container {
+                grid-template-columns: 1fr;
             }
 
             .products-grid,
@@ -1198,13 +1417,72 @@
                 padding: 4rem 1.5rem;
             }
 
-            .order-summary {
+            .order-summary,
+            .cart-summary,
+            .product-gallery {
                 position: relative;
                 top: 0;
             }
 
-            .cart-actions {
+            .cart-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .cart-item-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .email-form {
                 flex-direction: column;
+            }
+
+            .main-image {
+                height: 400px;
+            }
+
+            /* Make all buttons full-width on mobile */
+            .btn {
+                width: 100%;
+            }
+
+            .hero-cta {
+                width: 100%;
+            }
+
+            .add-to-cart {
+                width: auto;
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            /* Ensure cards are fully responsive */
+            .solution-card,
+            .product-card,
+            .bundle-card,
+            .value-card {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Make text readable on mobile */
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+            }
+
+            h3 {
+                font-size: 1.3rem !important;
+            }
+
+            /* Stack solution grid properly */
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
@@ -1217,13 +1495,20 @@
                 font-size: 1.3rem;
             }
 
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
+            .hero-image {
+                height: 300px;
             }
 
-            .btn {
-                width: 100%;
+            .main-image {
+                height: 300px;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+
+            .bundle-image {
+                height: 200px;
             }
         }
     </style>
@@ -1232,19 +1517,19 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo" onclick="showPage('home')">HERMIONE HAIR</a>
+            <a href="javascript:void(0)" onclick="navigateTo('home')"><img src="hh png-12.png" alt="haircare"></a>
             <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#" onclick="showPage('home'); closeMobileMenu()">Home</a></li>
-                <li><a href="#" onclick="showPage('products'); closeMobileMenu()">Products</a></li>
-                <li><a href="#" onclick="showPage('bundles'); closeMobileMenu()">Bundles</a></li>
-                <li><a href="#" onclick="showPage('about'); closeMobileMenu()">About</a></li>
+                <li><a href="javascript:void(0)" onclick="navigateTo('home'); closeMobileMenu()">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="navigateTo('products'); closeMobileMenu()">Products</a></li>
+                <li><a href="javascript:void(0)" onclick="navigateTo('bundles'); closeMobileMenu()">Bundles</a></li>
+                <li><a href="javascript:void(0)" onclick="navigateTo('about'); closeMobileMenu()">About</a></li>
                 <li>
-                    <div class="cart-icon" onclick="showPage('checkout'); closeMobileMenu()">
+                    <div class="cart-icon" onclick="navigateTo('cart'); closeMobileMenu()">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
@@ -1261,16 +1546,18 @@
     <div id="home" class="page active">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content">
-                <h1>Unlock Your Hair's Full Potential</h1>
-                <p>Luxury, results-driven haircare designed to cleanse, treat, nourish, and restore, giving you stronger, fuller, and healthier hair from root to tip.</p>
-                <div class="hero-cta">
-                    <button class="btn btn-primary" onclick="showPage('products')">Shop Now</button>
-                    <button class="btn" onclick="showPage('bundles')">Explore Bundles</button>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Unlock Your Hair's Full Potential</h1>
+                    <p>Luxury, results-driven haircare designed to cleanse, treat, nourish, and restore, giving you stronger, fuller, and healthier hair from root to tip.</p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" onclick="navigateTo('products')">Shop Now</button>
+                        <button class="btn" onclick="navigateTo('bundles')">Explore Bundles</button>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Natural Hair Beauty">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Natural Hair Beauty">
+                </div>
             </div>
         </section>
 
@@ -1280,6 +1567,16 @@
                 <h2>Struggling with Breakage, Dandruff, Thinning, or Slow Growth?</h2>
                 <p>From itchy scalp and dandruff to breakage, thinning edges, and stunted growth, hair issues can be frustrating and difficult to manage without the right routine.</p>
                 <p style="margin-top: 1.5rem; font-weight: bold; color: var(--black);">That's why you need more than just one product, you need a complete system</p>
+            </div>
+
+            <!-- Email Subscription -->
+            <div class="email-subscription">
+                <h3>Join Our Hair Care Community</h3>
+                <p>Get expert tips, exclusive offers, and early access to new products</p>
+                <form class="email-form" id="subscriptionForm">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Join us now!</button>
+                </form>
             </div>
         </section>
 
@@ -1322,9 +1619,9 @@
                         <p>Detangling Spray to make styling effortless and prevent breakage</p>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 3rem; font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin-left: auto; margin-right: auto;">Each product is formulated to work together, helping you achieve visible, lasting results</p>
+                <p style="text-align: center; margin-top: 3rem; font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--gray-dark);">Each product is formulated to work together, helping you achieve visible, lasting results</p>
                 <div style="text-align: center; margin-top: 3rem;">
-                    <button class="btn btn-primary" onclick="showPage('products')">Shop Collection</button>
+                    <button class="btn btn-primary" onclick="navigateTo('products')">Shop Collection</button>
                 </div>
             </div>
         </section>
@@ -1379,8 +1676,8 @@
                     </div>
                 </div>
             </div>
-            <div class="see-more-container">
-                <button class="btn" onclick="showPage('products')">See More</button>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn" onclick="navigateTo('products')">See More</button>
             </div>
         </section>
 
@@ -1393,7 +1690,7 @@
                     <p style="margin-top: 1rem;">Whether you're focused on growth, scalp care, or full hair restoration, there's a bundle for you.</p>
                 </div>
                 <div style="text-align: center; margin-top: 3rem;">
-                    <button class="btn btn-primary" onclick="showPage('bundles')">Shop Bundles</button>
+                    <button class="btn btn-primary" onclick="navigateTo('bundles')">Shop Bundles</button>
                 </div>
             </div>
         </section>
@@ -1404,9 +1701,8 @@
                 <h2>Ready to Transform Your Hair?</h2>
                 <p>UNLOCK your hair's full potential with the right products and the right routine</p>
             </div>
-            <div class="hero-cta" style="justify-content: center;">
-                <button class="btn btn-primary" onclick="showPage('products')">Shop Now</button>
-                <button class="btn" onclick="scrollToContact()">Send a Message</button>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="navigateTo('products')">Shop Now</button>
             </div>
         </section>
     </div>
@@ -1431,101 +1727,8 @@
                 <h2>Our Signature Bundles</h2>
                 <p>Carefully curated combinations for maximum results</p>
             </div>
-            <div class="bundles-grid">
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80" alt="Complete Growth Bundle">
-                    </div>
-                    <div class="bundle-content">
-                        <h3>Complete Growth Bundle</h3>
-                        <div class="bundle-products">
-                            Hair Growth Oil<br>
-                            Edge Growth Cream<br>
-                            Hair Butter
-                        </div>
-                        <div class="bundle-price">₦20,000</div>
-                        <div class="bundle-savings">Save ₦3,000</div>
-                        <button class="btn" onclick="addBundleToCart('growth-complete')">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80" alt="Edge Revival Bundle">
-                    </div>
-                    <div class="bundle-content">
-                        <h3>Edge Revival Bundle</h3>
-                        <div class="bundle-products">
-                            Hair Growth Oil<br>
-                            Edge Growth Cream
-                        </div>
-                        <div class="bundle-price">₦14,500</div>
-                        <div class="bundle-savings">Save ₦1,500</div>
-                        <button class="btn" onclick="addBundleToCart('edge-revival')">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80" alt="Wash Day Essentials">
-                    </div>
-                    <div class="bundle-content">
-                        <h3>Wash Day Essentials</h3>
-                        <div class="bundle-products">
-                            Herbal Shampoo<br>
-                            Wash-Off Conditioner<br>
-                            Leave-In Conditioner
-                        </div>
-                        <div class="bundle-price">₦16,000</div>
-                        <div class="bundle-savings">Save ₦2,500</div>
-                        <button class="btn" onclick="addBundleToCart('wash-day')">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="https://images.unsplash.com/photo-1583001761003-7c6b7a1b6d4e?w=600&q=80" alt="Scalp Care Bundle">
-                    </div>
-                    <div class="bundle-content">
-                        <h3>Scalp Care Bundle</h3>
-                        <div class="bundle-products">
-                            Herbal Shampoo<br>
-                            Anti-Dandruff Cream<br>
-                            Hair Growth Oil
-                        </div>
-                        <div class="bundle-price">₦18,500</div>
-                        <div class="bundle-savings">Save ₦2,500</div>
-                        <button class="btn" onclick="addBundleToCart('scalp-care')">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80" alt="Moisture Lock Bundle">
-                    </div>
-                    <div class="bundle-content">
-                        <h3>Moisture Lock Bundle</h3>
-                        <div class="bundle-products">
-                            Hair Butter<br>
-                            Deep Conditioner<br>
-                            Leave-In Conditioner
-                        </div>
-                        <div class="bundle-price">₦15,500</div>
-                        <div class="bundle-savings">Save ₦2,000</div>
-                        <button class="btn" onclick="addBundleToCart('moisture-lock')">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="bundle-card">
-                    <div class="bundle-image">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Full System Bundle">
-                    </div>
-                    <div class="bundle-content">
-                        <h3>Full System Bundle</h3>
-                        <div class="bundle-products">
-                            All 10 Products<br>
-                            Complete Hair Care System
-                        </div>
-                        <div class="bundle-price">₦60,000</div>
-                        <div class="bundle-savings">Save ₦10,000</div>
-                        <button class="btn" onclick="addBundleToCart('full-system')">Add to Cart</button>
-                    </div>
-                </div>
+            <div class="bundles-grid" id="bundlesGrid">
+                <!-- Bundles loaded by JS -->
             </div>
         </section>
     </div>
@@ -1562,6 +1765,17 @@
         </section>
     </div>
 
+    <!-- Cart Page -->
+    <div id="cart" class="page">
+        <section class="cart-page">
+            <h2 style="font-family: 'TAN AEGEAN', 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 3rem; text-align: center;">Your Cart</h2>
+            
+            <div id="cartContent">
+                <!-- Cart items will be loaded here -->
+            </div>
+        </section>
+    </div>
+
     <!-- Checkout Page -->
     <div id="checkout" class="page">
         <section class="checkout-section">
@@ -1569,37 +1783,38 @@
             <div class="checkout-grid">
                 <div class="checkout-form">
                     <form id="checkoutForm">
+                        <!-- Contact & Shipping -->
                         <div class="form-section">
-                            <h3>Shipping Information</h3>
+                            <h3>Contact & Shipping</h3>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" required placeholder="you@example.com">
+                            </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>First Name *</label>
+                                    <label>First Name</label>
                                     <input type="text" id="firstName" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Last Name *</label>
+                                    <label>Last Name</label>
                                     <input type="text" id="lastName" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Email Address *</label>
-                                <input type="email" id="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number *</label>
+                                <label>Phone Number</label>
                                 <input type="tel" id="phone" required>
                             </div>
                             <div class="form-group">
-                                <label>Delivery Address *</label>
-                                <textarea rows="3" id="address" required></textarea>
+                                <label>Address</label>
+                                <textarea rows="2" id="address" required></textarea>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>City *</label>
+                                    <label>City</label>
                                     <input type="text" id="city" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>State *</label>
+                                    <label>State</label>
                                     <select id="state" required onchange="updateShippingCost()">
                                         <option value="">Select State</option>
                                         <option value="Abia">Abia</option>
@@ -1645,61 +1860,66 @@
                             </div>
                         </div>
 
+                        <!-- Delivery Method -->
                         <div class="form-section">
-                            <h3>Payment Method</h3>
-                            <div class="payment-methods">
-                                <div class="payment-method active" onclick="selectPayment(this, 'card')">
-                                    <input type="radio" name="payment" value="card" checked>
-                                    <div>
-                                        <strong>Card Payment</strong>
-                                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Pay securely with your debit or credit card via Paystack</p>
-                                    </div>
+                            <h3>Delivery Method</h3>
+                            <div class="delivery-option selected" id="standardDelivery">
+                                <h4>Standard Delivery</h4>
+                                <p>Delivered within 2–7 working days</p>
+                            </div>
+                        </div>
+
+                        <!-- Payment -->
+                        <div class="form-section">
+                            <h3>Payment</h3>
+                            <div class="payment-method active" onclick="selectPayment(this, 'card')">
+                                <input type="radio" name="payment" value="card" checked>
+                                <div>
+                                    <strong>Card Payment</strong>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Secure payment via Paystack</p>
                                 </div>
-                                <div class="payment-method" onclick="selectPayment(this, 'transfer')">
-                                    <input type="radio" name="payment" value="transfer">
-                                    <div>
-                                        <strong>Bank Transfer</strong>
-                                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Transfer directly to our bank account via Paystack</p>
-                                    </div>
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this, 'transfer')">
+                                <input type="radio" name="payment" value="transfer">
+                                <div>
+                                    <strong>Bank Transfer</strong>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Direct transfer via Paystack</p>
                                 </div>
-                                <div class="payment-method" onclick="selectPayment(this, 'ussd')">
-                                    <input type="radio" name="payment" value="ussd">
-                                    <div>
-                                        <strong>USSD Payment</strong>
-                                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Pay with your bank's USSD code</p>
-                                    </div>
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this, 'ussd')">
+                                <input type="radio" name="payment" value="ussd">
+                                <div>
+                                    <strong>USSD Payment</strong>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--gray-dark);">Pay with your bank's USSD code</p>
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Complete Order</button>
+                        <div class="checkout-reassurance">
+                            <strong>Secure checkout</strong><br>
+                            Your information is handled with care and protected by industry-standard encryption.
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Complete Purchase</button>
                     </form>
                 </div>
 
                 <div class="order-summary">
                     <h3>Order Summary</h3>
-                    <div class="cart-actions">
-                        <button class="cart-action-btn" onclick="viewCartDetails()">View Cart</button>
-                        <button class="cart-action-btn danger" onclick="emptyCart()">Empty Cart</button>
+                    <div id="checkoutOrderItems">
+                        <!-- Order items will be loaded here -->
                     </div>
-                    <div id="orderItems">
-                        <div class="order-item">
-                            <span>Your cart is empty</span>
-                        </div>
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotal">₦0</span>
                     </div>
-                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--black);">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                            <span>Subtotal:</span>
-                            <span id="subtotal">₦0</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                            <span>Shipping:</span>
-                            <span id="shipping">₦0</span>
-                        </div>
+                    <div class="summary-line">
+                        <span>Shipping</span>
+                        <span id="checkoutShipping">Calculated at checkout</span>
                     </div>
-                    <div class="order-total">
-                        <span>Total:</span>
-                        <span id="total">₦0</span>
+                    <div class="summary-line total">
+                        <span>Total</span>
+                        <span id="checkoutTotal">₦0</span>
                     </div>
                 </div>
             </div>
@@ -1788,25 +2008,45 @@
             <div class="footer-brand">
                 <h3>HERMIONE HAIR</h3>
                 <p>Luxury haircare for stronger, fuller, healthier hair from root to tip.</p>
+                <p style="margin-top: 1rem;"><strong>Phone:</strong> 09063989800</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/hermionehair__" target="_blank" title="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://tiktok.com/@hermionehair" target="_blank" title="TikTok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/905338706778" target="_blank" title="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-links">
                 <h4>Shop</h4>
                 <ul>
-                    <li><a href="#" onclick="showPage('products')">All Products</a></li>
-                    <li><a href="#" onclick="showPage('bundles')">Bundles</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('products')">All Products</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('bundles')">Bundles</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
-                    <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
-                    <li><a href="#" onclick="showPage('delivery')">Delivery Info</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('about')">About Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('privacy')">Privacy Policy</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('delivery')">Delivery Info</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h4>Not sure where to start?</h4>
-                <p>Send us a message, and we'll help you build the perfect routine for your hair.</p>
+                <h4>Get in Touch</h4>
+                <p>Have questions? We're here to help.</p>
                 <form class="contact-form" id="contactForm">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -1828,22 +2068,7 @@
             <p id="modalMessage">Action completed successfully.</p>
             <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                 <button class="btn" onclick="closeModal()" style="flex: 1;">Continue Shopping</button>
-                <button class="btn btn-primary" onclick="closeModal(); showPage('checkout')" style="flex: 1;">Checkout</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Details Modal -->
-    <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCartModal()">&times;</button>
-            <h2>Your Cart</h2>
-            <div id="cartModalContent" style="margin: 2rem 0;">
-                <!-- Cart items will be displayed here -->
-            </div>
-            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                <button class="btn" onclick="closeCartModal()" style="flex: 1;">Close</button>
-                <button class="btn btn-primary" onclick="closeCartModal(); showPage('checkout')" style="flex: 1;">Checkout</button>
+                <button class="btn btn-primary" onclick="closeModal(); navigateTo('cart')" style="flex: 1;">View Cart</button>
             </div>
         </div>
     </div>
@@ -2000,12 +2225,106 @@
             }
         };
 
-        // Cart and state management
+        // Bundles data
+        const bundles = [
+            {
+                id: 'growth-complete',
+                name: 'Complete Growth Bundle',
+                price: 20000,
+                savings: 3000,
+                products: 'Hair Growth Oil + Edge Growth Cream + Hair Butter',
+                image: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80'
+            },
+            {
+                id: 'edge-revival',
+                name: 'Edge Revival Bundle',
+                price: 14500,
+                savings: 1500,
+                products: 'Hair Growth Oil + Edge Growth Cream',
+                image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80'
+            },
+            {
+                id: 'wash-day',
+                name: 'Wash Day Essentials',
+                price: 16000,
+                savings: 2500,
+                products: 'Herbal Shampoo + Wash-Off Conditioner + Leave-In Conditioner',
+                image: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80'
+            },
+            {
+                id: 'scalp-care',
+                name: 'Scalp Care Bundle',
+                price: 18500,
+                savings: 2500,
+                products: 'Herbal Shampoo + Anti-Dandruff Cream + Hair Growth Oil',
+                image: 'https://images.unsplash.com/photo-1583001761003-7c6b7a1b6d4e?w=600&q=80'
+            },
+            {
+                id: 'moisture-lock',
+                name: 'Moisture Lock Bundle',
+                price: 15500,
+                savings: 2000,
+                products: 'Hair Butter + Deep Conditioner + Leave-In Conditioner',
+                image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80'
+            },
+            {
+                id: 'full-system',
+                name: 'Full System Bundle',
+                price: 60000,
+                savings: 10000,
+                products: 'All 10 Products - Complete Hair Care System',
+                image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80'
+            }
+        ];
+
+        // Navigation history
+        let navigationHistory = ['home'];
         let cart = [];
         let currentProductId = 1;
         let currentQuantity = 1;
         let selectedPaymentMethod = 'card';
         let shippingCost = 0;
+
+        // Navigation function with history
+        function navigateTo(pageId) {
+            // Add to history if different from current
+            if (navigationHistory[navigationHistory.length - 1] !== pageId) {
+                navigationHistory.push(pageId);
+            }
+            
+            // Show page
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+            closeMobileMenu();
+
+            // Load content
+            if (pageId === 'products') {
+                loadAllProducts();
+            } else if (pageId === 'bundles') {
+                loadBundles();
+            } else if (pageId === 'cart') {
+                loadCartPage();
+            } else if (pageId === 'checkout') {
+                loadCheckoutPage();
+            }
+        }
+
+        // Browser back button handling
+        window.addEventListener('popstate', function(e) {
+            if (navigationHistory.length > 1) {
+                navigationHistory.pop(); // Remove current
+                const previousPage = navigationHistory[navigationHistory.length - 1];
+                navigateTo(previousPage);
+            }
+        });
+
+        // Override default back behavior
+        window.addEventListener('load', function() {
+            history.pushState({page: 'home'}, '', '');
+        });
 
         // Initialize products grid
         function loadAllProducts() {
@@ -2032,18 +2351,23 @@
             }).join('');
         }
 
-        // Navigation
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-            window.scrollTo(0, 0);
-            closeMobileMenu();
-
-            if (pageId === 'products') {
-                loadAllProducts();
-            }
+        // Load bundles
+        function loadBundles() {
+            const grid = document.getElementById('bundlesGrid');
+            grid.innerHTML = bundles.map(bundle => `
+                <div class="bundle-card">
+                    <div class="bundle-image">
+                        <img src="${bundle.image}" alt="${bundle.name}">
+                    </div>
+                    <div class="bundle-content">
+                        <h3>${bundle.name}</h3>
+                        <div class="bundle-products">${bundle.products}</div>
+                        <div class="bundle-price">₦${bundle.price.toLocaleString()}</div>
+                        <div class="bundle-savings">Save ₦${bundle.savings.toLocaleString()}</div>
+                        <button class="btn" onclick="addBundleToCart('${bundle.id}')">Add to Cart</button>
+                    </div>
+                </div>
+            `).join('');
         }
 
         // Mobile menu
@@ -2077,7 +2401,7 @@
             const benefitsList = document.getElementById('detailProductBenefits');
             benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join('');
             
-            showPage('productDetail');
+            navigateTo('productDetail');
         }
 
         // Quantity controls
@@ -2096,7 +2420,7 @@
         // Cart functions
         function addToCart(productId, quantity = 1) {
             const product = products[productId];
-            const existingItem = cart.find(item => item.id === productId);
+            const existingItem = cart.find(item => item.id === productId && !item.isBundle);
             
             if (existingItem) {
                 existingItem.quantity += quantity;
@@ -2105,12 +2429,13 @@
                     id: productId,
                     name: product.name,
                     price: product.price,
-                    quantity: quantity
+                    image: product.image,
+                    quantity: quantity,
+                    isBundle: false
                 });
             }
             
             updateCartCount();
-            updateOrderSummary();
             showModal('Added to Cart!', `${product.name} has been added to your cart.`);
         }
 
@@ -2120,21 +2445,12 @@
 
         function buyNow() {
             addToCart(currentProductId, currentQuantity);
-            showPage('checkout');
+            navigateTo('checkout');
         }
 
         function addBundleToCart(bundleId) {
-            const bundles = {
-                'growth-complete': { name: 'Complete Growth Bundle', price: 20000 },
-                'edge-revival': { name: 'Edge Revival Bundle', price: 14500 },
-                'wash-day': { name: 'Wash Day Essentials', price: 16000 },
-                'scalp-care': { name: 'Scalp Care Bundle', price: 18500 },
-                'moisture-lock': { name: 'Moisture Lock Bundle', price: 15500 },
-                'full-system': { name: 'Full System Bundle', price: 60000 }
-            };
-
-            const bundle = bundles[bundleId];
-            const existingItem = cart.find(item => item.name === bundle.name);
+            const bundle = bundles.find(b => b.id === bundleId);
+            const existingItem = cart.find(item => item.id === bundleId && item.isBundle);
             
             if (existingItem) {
                 existingItem.quantity += 1;
@@ -2143,71 +2459,14 @@
                     id: bundleId,
                     name: bundle.name,
                     price: bundle.price,
+                    image: bundle.image,
                     quantity: 1,
                     isBundle: true
                 });
             }
             
             updateCartCount();
-            updateOrderSummary();
             showModal('Bundle Added!', `${bundle.name} has been added to your cart.`);
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartCount();
-            updateOrderSummary();
-        }
-
-        function emptyCart() {
-            if (cart.length === 0) {
-                showModal('Cart Empty', 'Your cart is already empty.');
-                return;
-            }
-            
-            if (confirm('Are you sure you want to empty your cart?')) {
-                cart = [];
-                updateCartCount();
-                updateOrderSummary();
-                showModal('Cart Emptied', 'All items have been removed from your cart.');
-            }
-        }
-
-        function viewCartDetails() {
-            if (cart.length === 0) {
-                showModal('Cart Empty', 'Your cart is empty. Add some products first!');
-                return;
-            }
-
-            const cartContent = cart.map((item, index) => `
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--gray-medium);">
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 0.25rem;">${item.name}</div>
-                        <div style="font-size: 0.9rem; color: var(--gray-dark);">Qty: ${item.quantity} × ₦${item.price.toLocaleString()}</div>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-weight: 600; margin-bottom: 0.5rem;">₦${(item.price * item.quantity).toLocaleString()}</div>
-                        <button onclick="removeFromCart(${index}); viewCartDetails();" style="background: transparent; border: 1px solid #c00; color: #c00; padding: 0.25rem 0.75rem; cursor: pointer; font-size: 0.85rem; border-radius: var(--radius);">Remove</button>
-                    </div>
-                </div>
-            `).join('');
-
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const totalContent = `
-                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--black);">
-                    <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
-                        <span>Subtotal:</span>
-                        <span>₦${subtotal.toLocaleString()}</span>
-                    </div>
-                </div>
-            `;
-
-            document.getElementById('cartModalContent').innerHTML = cartContent + totalContent;
-            document.getElementById('cartModal').classList.add('active');
-        }
-
-        function closeCartModal() {
-            document.getElementById('cartModal').classList.remove('active');
         }
 
         function updateCartCount() {
@@ -2215,39 +2474,152 @@
             document.getElementById('cartCount').textContent = totalItems;
         }
 
-        function updateOrderSummary() {
-            const orderItemsContainer = document.getElementById('orderItems');
+        function updateCartItemQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity < 1) {
+                cart[index].quantity = 1;
+            }
+            loadCartPage();
+            updateCartCount();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            loadCartPage();
+            updateCartCount();
+        }
+
+        function emptyCart() {
+            if (confirm('Are you sure you want to empty your cart?')) {
+                cart = [];
+                loadCartPage();
+                updateCartCount();
+            }
+        }
+
+        // Load cart page
+        function loadCartPage() {
+            const container = document.getElementById('cartContent');
             
             if (cart.length === 0) {
-                orderItemsContainer.innerHTML = '<div class="order-item"><span>Your cart is empty</span></div>';
-                document.getElementById('subtotal').textContent = '₦0';
-                document.getElementById('shipping').textContent = '₦0';
-                document.getElementById('total').textContent = '₦0';
+                container.innerHTML = `
+                    <div class="empty-cart-state">
+                        <h2>Your cart is empty</h2>
+                        <p>Add some products to get started</p>
+                        <button class="btn btn-primary" onclick="navigateTo('products')">Shop Now</button>
+                    </div>
+                `;
                 return;
             }
-            
-            orderItemsContainer.innerHTML = cart.map((item, index) => `
-                <div class="order-item">
-                    <div class="order-item-info">
-                        <div class="order-item-name">${item.name}</div>
-                        <div class="order-item-qty">Qty: ${item.quantity}</div>
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = subtotal >= 25000 ? 0 : 2500;
+            const total = subtotal + shipping;
+
+            container.innerHTML = `
+                <div class="cart-container">
+                    <div class="cart-items">
+                        ${cart.map((item, index) => `
+                            <div class="cart-item">
+                                <div class="cart-item-image">
+                                    <img src="${item.image}" alt="${item.name}">
+                                </div>
+                                <div class="cart-item-details">
+                                    <h3>${item.name}</h3>
+                                    <div class="cart-item-price">₦${item.price.toLocaleString()}</div>
+                                    <div class="quantity-controls">
+                                        <button class="quantity-btn" onclick="updateCartItemQuantity(${index}, -1)">-</button>
+                                        <div class="quantity-display">${item.quantity}</div>
+                                        <button class="quantity-btn" onclick="updateCartItemQuantity(${index}, 1)">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <div class="cart-item-total">₦${(item.price * item.quantity).toLocaleString()}</div>
+                                    <button class="remove-item" onclick="removeFromCart(${index})">Remove</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                        
+                        <div class="cart-reassurance">
+                            <strong>Delivered within 2–7 working days</strong><br>
+                            Complimentary returns within 14 days
+                        </div>
                     </div>
-                    <div class="order-item-price">₦${(item.price * item.quantity).toLocaleString()}</div>
-                    <button class="remove-item" onclick="removeFromCart(${index})" title="Remove item">&times;</button>
+
+                    <div class="cart-summary">
+                        <h3>Summary</h3>
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span>₦${subtotal.toLocaleString()}</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Shipping</span>
+                            <span>${shipping === 0 ? 'Free' : '₦' + shipping.toLocaleString()}</span>
+                        </div>
+                        <div class="summary-line total">
+                            <span>Total</span>
+                            <span>₦${total.toLocaleString()}</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="navigateTo('checkout')" style="width: 100%; margin-top: 2rem;">Proceed to Checkout</button>
+                        <button class="empty-cart-link" onclick="emptyCart()">Clear cart</button>
+                    </div>
+                </div>
+
+                <div class="similar-products">
+                    <h3>You might also like</h3>
+                    <div class="similar-scroll">
+                        ${Object.keys(products).slice(0, 4).map(id => {
+                            const product = products[id];
+                            return `
+                                <div class="similar-product product-card" onclick="showProductDetail(${id})">
+                                    <div class="product-image" style="height: 200px;">
+                                        <img src="${product.image}" alt="${product.name}">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 style="font-size: 1.2rem;">${product.name}</h3>
+                                        <div class="product-footer">
+                                            <span class="product-price">₦${product.price.toLocaleString()}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load checkout page
+        function loadCheckoutPage() {
+            if (cart.length === 0) {
+                navigateTo('cart');
+                return;
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const orderItems = document.getElementById('checkoutOrderItems');
+            
+            orderItems.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <div>
+                        <div style="font-weight: 600;">${item.name}</div>
+                        <div style="font-size: 0.9rem; color: var(--gray-dark);">Qty: ${item.quantity}</div>
+                    </div>
+                    <div style="font-weight: 600;">₦${(item.price * item.quantity).toLocaleString()}</div>
                 </div>
             `).join('');
-            
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const total = subtotal + shippingCost;
-            
-            document.getElementById('subtotal').textContent = `₦${subtotal.toLocaleString()}`;
-            document.getElementById('shipping').textContent = `₦${shippingCost.toLocaleString()}`;
-            document.getElementById('total').textContent = `₦${total.toLocaleString()}`;
+
+            document.getElementById('checkoutSubtotal').textContent = `₦${subtotal.toLocaleString()}`;
+            updateShippingCost();
         }
 
         function updateShippingCost() {
             const state = document.getElementById('state').value;
-            if (state === 'Lagos-Mainland') {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            if (subtotal >= 25000) {
+                shippingCost = 0;
+            } else if (state === 'Lagos-Mainland') {
                 shippingCost = 1500;
             } else if (state === 'Lagos-Island') {
                 shippingCost = 2000;
@@ -2257,12 +2629,9 @@
                 shippingCost = 0;
             }
             
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            if (subtotal >= 25000) {
-                shippingCost = 0;
-            }
-            
-            updateOrderSummary();
+            const total = subtotal + shippingCost;
+            document.getElementById('checkoutShipping').textContent = shippingCost === 0 ? 'Free' : `₦${shippingCost.toLocaleString()}`;
+            document.getElementById('checkoutTotal').textContent = `₦${total.toLocaleString()}`;
         }
 
         // Payment selection
@@ -2315,8 +2684,10 @@
                     showModal('Payment Successful!', `Your order has been confirmed. Reference: ${response.reference}`);
                     cart = [];
                     updateCartCount();
-                    updateOrderSummary();
                     document.getElementById('checkoutForm').reset();
+                    setTimeout(() => {
+                        navigateTo('home');
+                    }, 3000);
                 },
                 onClose: function() {
                     alert('Payment window closed');
@@ -2326,7 +2697,14 @@
             handler.openIframe();
         }
 
-        // Contact form submission
+        // Forms
+        document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            showModal('Success!', 'Thank you for subscribing! Check your email for exclusive offers.');
+            this.reset();
+        });
+
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -2341,11 +2719,10 @@
             
             window.location.href = mailtoLink;
             
-            showModal('Message Sent!', 'Your default email client should open. If not, please email us directly at angelamaefunah@gmail.com');
+            showModal('Message Sent!', 'Your default email client should open. If not, please email us at angelamaefunah@gmail.com');
             this.reset();
         });
 
-        // Checkout form submission
         document.getElementById('checkoutForm').addEventListener('submit', function(e) {
             e.preventDefault();
             initializePaystack();
@@ -2363,7 +2740,7 @@
         }
 
         function scrollToContact() {
-            showPage('home');
+            navigateTo('home');
             setTimeout(() => {
                 document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
             }, 100);
@@ -2371,8 +2748,8 @@
 
         // Initialize
         updateCartCount();
-        updateOrderSummary();
         loadAllProducts();
+        loadBundles();
     </script>
 </body>
 </html>
